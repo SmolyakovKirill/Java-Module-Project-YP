@@ -3,14 +3,18 @@ import java.util.ArrayList;
 
 public class Calculator {
     ArrayList<String> products = new ArrayList<>();
-    ArrayList<Integer> prices = new ArrayList<>();
+    float price;
 
-    public void addProduct(String product, int price){
+    public void addProduct(String product, float price){
         this.products.add(product);
-        this.prices.add(price);
+        this.price = this.price + price;
     }
 
     public ArrayList<String> getProducts(){
         return this.products;
+    }
+
+    public float getFinalPrice(){
+        return this.price;
     }
 }
