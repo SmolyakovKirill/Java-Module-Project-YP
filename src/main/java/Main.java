@@ -2,22 +2,23 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
         int members = 0;
 
-        try {
-            members = scanner.nextInt();
+        while (true){
+            Scanner scanner = new Scanner(System.in);
+            try {
+                members = scanner.nextInt();
+            }
+            catch (Exception ex){
+                System.out.println("Необходимо ввести целочисленную переменнную");
+                continue;
+            }
+            if(members <= 1) {
+                System.out.println("Ошибка");
+                continue;
+            }
+            System.out.println(members);
+            break;
         }
-
-        catch (Exception ex){
-            System.out.println("Необходимо ввести целочисленную переменнную");
-            return;
-        }
-        if(members <= 1) {
-            System.out.println("Ошибка");
-            return;
-        }
-
-        System.out.println(members);
     }
 }
