@@ -17,8 +17,8 @@ public class Main {
                 System.out.println("Ошибка");
                 continue;
             }
-            System.out.println(members);
             break;
         }
+        System.out.println(members);
     }
 }
