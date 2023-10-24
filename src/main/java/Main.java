@@ -26,20 +26,25 @@ public class Main {
 
         while (true){
             Scanner scanner = new Scanner(System.in);
+            Product product = new Product();
 
             System.out.println("Введите название товара: ");
-            String product = scanner.nextLine();
+            String productName = scanner.nextLine();
 
-            if(product.equalsIgnoreCase("Завершить"))
+            if(productName.equalsIgnoreCase("Завершить"))
                 break;
 
             System.out.println("Введите цену товара(в формате рубли.копейки): ");
             Float price = scanner.nextFloat();
 
-            calculator.addProduct(product, price);
+            product.setName(productName);
+            product.setPrice(price);
+
+            calculator.addProduct(product);
         }
 
-        System.out.println(calculator.getProducts());
+        calculator.printAllProducts();
         System.out.println(calculator.getFinalPrice());
     }
+
 }

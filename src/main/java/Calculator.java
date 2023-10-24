@@ -2,19 +2,29 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Calculator {
-    ArrayList<String> products = new ArrayList<>();
-    float price;
+    ArrayList<Product> products = new ArrayList<>();
 
-    public void addProduct(String product, float price){
+    public void addProduct(Product product){
         this.products.add(product);
-        this.price = this.price + price;
     }
 
-    public ArrayList<String> getProducts(){
+    public ArrayList<Product> getProducts(){
         return this.products;
     }
 
     public float getFinalPrice(){
-        return this.price;
+        float sum = 0;
+        for(int i = 0; i <= products.size() - 1; i++){
+            sum = sum + products.get(i).price;
+        }
+        return sum;
     }
+
+    public void printAllProducts(){
+        for(int i = 0; i <= products.size() - 1; i++){
+            System.out.println(products.get(i).name);
+        }
+    }
+
+
 }
