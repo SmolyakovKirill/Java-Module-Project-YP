@@ -8,10 +8,6 @@ public class Calculator {
         this.products.add(product);
     }
 
-    public ArrayList<Product> getProducts(){
-        return this.products;
-    }
-
     public float getFinalPrice(){
         float sum = 0;
         for(int i = 0; i <= products.size() - 1; i++){

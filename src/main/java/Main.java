@@ -43,8 +43,9 @@ public class Main {
             calculator.addProduct(product);
         }
 
+        System.out.println("Добавленные товары:");
         calculator.printAllProducts();
-        System.out.println(calculator.getFinalPrice());
+        System.out.println(calculator.getFinalPrice()/members);
     }
 
 }
