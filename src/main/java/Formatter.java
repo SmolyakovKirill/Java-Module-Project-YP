@@ -5,11 +5,23 @@ public class Formatter {
 
         switch (value % (10 * valueLength)){
             case 1:
-                System.out.printf("Цена на каждого: %.2f рубль\n", price);
-                return;
+                switch (value % (100 * valueLength)){
+                    case 11:                                                                        //exception for number 11
+                        System.out.printf("Цена на каждого: %.2f рублей\n", price);
+                        return;
+                    default:
+                        System.out.printf("Цена на каждого: %.2f рубль\n", price);
+                        return;
+                }
             case 2, 3, 4:
-                System.out.printf("Цена на каждого: %.2f рубля\n", price);
-                return;
+                switch (value % (100 * valueLength)){
+                    case 12, 13, 14:                                                                //exception for number 12, 13, 14
+                        System.out.printf("Цена на каждого: %.2f рублей\n", price);
+                        return;
+                    default:
+                        System.out.printf("Цена на каждого: %.2f рубль\n", price);
+                        return;
+                }
             default:
                 System.out.printf("Цена на каждого: %.2f рублей\n", price);
         }

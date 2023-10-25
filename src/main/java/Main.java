@@ -10,7 +10,7 @@ public class Main {
 
         int members = inputMembers();
 
-        while (!isPriceReady) {
+        while (!isPriceReady) {                                                                     //ask for new product while price is not ready
             Product product = new Product();
             productName = inputProductName();
 
@@ -27,13 +27,13 @@ public class Main {
         formatter.getRightEnding(calculator.getFinalPrice()/members);
     }
 
-    public static int inputMembers(){
+    public static int inputMembers(){                                                               //method for input count of members
         int members = 0;
         while (true){
             System.out.println("На скольких человек необходимо разделить счет?:");
 
             Scanner scanner = new Scanner(System.in);
-            try {
+            try {                                                                                   //checking number for correct value
                 members = scanner.nextInt();
             }
             catch (Exception ex){
@@ -49,7 +49,7 @@ public class Main {
         return members;
     }
 
-    public static String inputProductName(){
+    public static String inputProductName(){                                                        //method for input product name
         String productName;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите название товара: ");
@@ -61,12 +61,12 @@ public class Main {
         return productName;
     }
 
-    public static float inputPrice(){
+    public static float inputPrice(){                                                               //method for input product price
         Float price = 0.0F;
         while (true){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите цену товара(в формате рубли.копейки): ");
-        try {
+        try {                                                                                       //checking price for correct value
              price = scanner.nextFloat();
         }
         catch (Exception ex){
