@@ -5,13 +5,13 @@ public class Formatter {
 
         switch (value % (10 * valueLength)){
             case 1:
-                System.out.printf("%.2f рубль\n", price);
+                System.out.printf("Цена на каждого: %.2f рубль\n", price);
                 return;
             case 2, 3, 4:
-                System.out.printf("%.2f рубля\n", price);
+                System.out.printf("Цена на каждого: %.2f рубля\n", price);
                 return;
             default:
-                System.out.printf("%.2f рублей\n", price);
+                System.out.printf("Цена на каждого: %.2f рублей\n", price);
         }
     }
 }
