@@ -3,6 +3,9 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         int members = 0;
+        Calculator calculator = new Calculator();
+        Product product = new Product();
+        Formatter formatter = new Formatter();
 
         while (true){
             System.out.println("На скольких человек необходимо разделить счет?:");
@@ -22,12 +25,8 @@ public class Main {
             break;
         }
 
-        Calculator calculator = new Calculator();
-
         while (true){
             Scanner scanner = new Scanner(System.in);
-            Product product = new Product();
-
             System.out.println("Введите название товара: ");
             String productName = scanner.nextLine();
 
@@ -45,7 +44,7 @@ public class Main {
 
         System.out.println("Добавленные товары:");
         calculator.printAllProducts();
-        System.out.println(calculator.getFinalPrice()/members);
+        formatter.getRightEnding(calculator.getFinalPrice()/members);
     }
 
 }
