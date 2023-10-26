@@ -52,8 +52,18 @@ public class Main {
     public static String inputProductName(){                                                        //method for input product name
         String productName;
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите название товара: ");
-        productName = scanner.nextLine();
+
+        while (true){
+            System.out.println("Введите название товара или команду \"Завершить\", если вы закончили: ");
+            productName = scanner.nextLine();
+            if (!isNameCorrect(productName)){
+                System.out.println("Введите корректное название товара ;)");
+                continue;
+            }
+            break;
+        }
+
+
         if (productName.equalsIgnoreCase("Завершить")) {
             isPriceReady = true;
             return " ";
@@ -73,13 +83,17 @@ public class Main {
              System.out.println("Необходимо ввести число :)");
              continue;
          }
-        if (price <= 1) {
+        if (price < 0) {
             System.out.println("Некорректное значение, цена должна быть больше 0 :)");
             continue;
         }
         break;
         }
         return price;
+    }
+
+    public static boolean isNameCorrect(String productName) {                                       //method for search incorrect names with regex
+        return productName.matches("[а-яА-Яa-zA-Z]+");
     }
 
 }

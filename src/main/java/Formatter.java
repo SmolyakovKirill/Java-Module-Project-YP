@@ -4,6 +4,9 @@ public class Formatter {
         int valueLength = String.valueOf(value).length();
 
         switch (value % (10 * valueLength)){
+            case 0:
+                System.out.printf("Цена на каждого: %.2f рублей\n", price);
+                break;
             case 1:
                 switch (value % (100 * valueLength)){
                     case 11:                                                                        //exception for number 11
@@ -19,7 +22,7 @@ public class Formatter {
                         System.out.printf("Цена на каждого: %.2f рублей\n", price);
                         return;
                     default:
-                        System.out.printf("Цена на каждого: %.2f рубль\n", price);
+                        System.out.printf("Цена на каждого: %.2f рубля\n", price);
                         return;
                 }
             default:
